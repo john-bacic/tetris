@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Tetis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Added for mobile responsiveness -->
     <link rel="stylesheet" href="styles.css">
     <!-- Google Fonts: Pixelify Sans for a blocky appearance -->
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+    <!-- Google Material Icons for mobile controls -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <div class="game-container">
@@ -19,6 +22,13 @@
         </div>
         <div id="overlay"></div> <!-- Added overlay for dimming the game on Game Over -->
         <div class="message-container" id="message-container"></div>
+        <!-- Mobile Controls -->
+        <div class="mobile-controls">
+            <button id="left-button"><span class="material-icons">arrow_left</span></button>
+            <button id="up-button"><span class="material-icons">arrow_upward</span></button>
+            <button id="down-button"><span class="material-icons">arrow_downward</span></button>
+            <button id="right-button"><span class="material-icons">arrow_right</span></button>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

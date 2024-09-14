@@ -7,6 +7,12 @@ const pauseButton = document.getElementById('pause-button')
 const messageContainer = document.getElementById('message-container')
 const overlay = document.getElementById('overlay') // Added overlay element selection
 
+// Mobile control buttons
+const leftButton = document.getElementById('left-button')
+const rightButton = document.getElementById('right-button')
+const upButton = document.getElementById('up-button')
+const downButton = document.getElementById('down-button')
+
 context.scale(20, 20)
 context.imageSmoothingEnabled = false // Ensure crisp rendering
 
@@ -331,6 +337,7 @@ function pauseGame() {
 startButton.addEventListener('click', startGame)
 pauseButton.addEventListener('click', pauseGame)
 
+// Handle keyboard controls
 document.addEventListener('keydown', (event) => {
   if (!isStarted || isPaused) return
   if (event.key === 'ArrowLeft') {
@@ -342,6 +349,27 @@ document.addEventListener('keydown', (event) => {
   } else if (event.key === 'ArrowUp') {
     playerRotate(1)
   }
+})
+
+// Handle mobile controls
+leftButton.addEventListener('click', () => {
+  if (!isStarted || isPaused) return
+  playerMove(-1)
+})
+
+rightButton.addEventListener('click', () => {
+  if (!isStarted || isPaused) return
+  playerMove(1)
+})
+
+downButton.addEventListener('click', () => {
+  if (!isStarted || isPaused) return
+  playerDrop()
+})
+
+upButton.addEventListener('click', () => {
+  if (!isStarted || isPaused) return
+  playerRotate(1)
 })
 
 // Initial setup

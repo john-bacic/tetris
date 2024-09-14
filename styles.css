@@ -19,13 +19,14 @@ body {
     align-items: center;
     padding: 10px;
     box-sizing: border-box;
+    padding-bottom: 120px; /* Increased space for mobile controls */
 }
 
 canvas {
     width: 100%;
     height: auto;
     max-width: 100vw;
-    max-height: 80vh; /* Allocate space for controls and score */
+    max-height: 70vh; /* Adjusted to accommodate more space for controls */
     border: 2px dashed rgba(71, 71, 71, 0.2);
     background: #000000;
 }
@@ -118,7 +119,40 @@ button:hover:not(:disabled) {
     z-index: 2;
 }
 
-/* Responsive Adjustments */
+/* Mobile Controls */
+.mobile-controls {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    gap: 5px;
+    z-index: 4;
+}
+
+.mobile-controls button {
+    background-color: rgba(20, 20, 20, 0.8);
+    border: none;
+    color: #c1c1c1;
+    padding: 5px;
+    /* font-size: 24px; */
+    /* border-radius: 10%; */
+    width: 10px;
+    /* max-width: 20px; */
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.material-icons {
+    font-size: 36px; /* Adjust icon size as needed */
+}
+
+.mobile-controls button:active {
+    background-color: #1c1c1c;
+}
+
 @media (orientation: landscape) {
     .score-container {
         font-size: 3vw;
@@ -157,6 +191,10 @@ button:hover:not(:disabled) {
     }
     .message-container {
         font-size: 7vw;
+    }
+    /* Show mobile controls on small screens */
+    .mobile-controls {
+        display: flex;
     }
 }
 
