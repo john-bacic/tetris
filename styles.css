@@ -1,0 +1,108 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+.game-container {
+    position: relative;
+    width: 240px; /* Match the canvas width */
+}
+
+canvas {
+    border: 2px dashed rgba(71, 71, 71, 0.2);
+    border-width: 2px;
+    background: #000000;
+}
+
+.score-container {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 240px; /* Align with the canvas width */
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertically center the items */
+    color: #11ff00;
+    /* Updated font-family for a blocky look */
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 22px; /* Adjusted font size to complement the blocky font */
+    /* Remove antialiasing */
+    -webkit-font-smoothing: none; /* For WebKit-based browsers */
+    -moz-osx-font-smoothing: grayscale; /* For Firefox on macOS */
+    text-rendering: crispEdges; /* Improve text rendering */
+}
+
+.high-score {
+    font-size: 22px; /* Half the size of the main score */
+    color: #ffdd00; /* Different color for distinction */
+}
+
+.controls {
+    margin-top: 20px; /* Positions controls below the canvas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    background-color: #11ff00;
+    border: none;
+    color: #000;
+    padding: 10px 20px;
+    margin: 0 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: 'Pixelify Sans', sans-serif;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+    z-index: 9999; /* Highest z-index to ensure buttons are on top */
+}
+
+button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    background-color: #0bb300;
+}
+
+.message-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffdd00;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 24px;
+    display: none;
+    z-index: 3; /* Above the overlay */
+}
+
+#pause-button {
+    display: none; /* Hide Pause button initially */
+    background-color: #141414;
+    color:#ffdd00;
+    border: none;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 102%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75); /* 75% opacity dark cover */
+    display: none; /* Hidden by default */
+    z-index: 2; /* Above canvas and controls */
+}
+

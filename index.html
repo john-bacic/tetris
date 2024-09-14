@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tetis</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts: Pixelify Sans for a blocky appearance -->
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <canvas id="tetris" width="240" height="400"></canvas>
+        <div class="score-container">
+            <span id="score">Score: 0</span> <span id="high-score" class="high-score">High: 0</span>
+        </div>
+        <div class="controls">
+            <button id="start-button">Start</button>
+            <button id="pause-button" disabled>Pause</button>
+        </div>
+        <div id="overlay"></div> <!-- Added overlay for dimming the game on Game Over -->
+        <div class="message-container" id="message-container"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
