@@ -27,7 +27,7 @@ body {
 @media (max-device-width: 812px) and (orientation: portrait) {
     /* iPhone X, XS, 11 Pro */
     body {
-        padding-top: 18px;
+        padding-top: px;
     }
 }
 
@@ -83,9 +83,9 @@ canvas {
 
 /* Style for Start and Pause buttons within score-container */
 .score-container button {
-    background-color: #11ff00;
+    background-color: #03f613;
     border: none;
-    color: #000;
+    color: #000000;
     padding: 1vh 2vw;
     font-size: 4vw;
     font-family: 'Pixelify Sans', sans-serif;
@@ -101,7 +101,7 @@ canvas {
 }
 
 .score-container button:hover:not(:disabled) {
-    background-color: #0bb300;
+    background-color: #0fdc00;
 }
 
 /* Removed .controls styles as the .controls div is no longer used */
