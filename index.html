@@ -12,16 +12,20 @@
 </head>
 <body>
     <div class="game-container">
-        <canvas id="tetris" width="240" height="400"></canvas>
+        <!-- Moved score-container to the top -->
         <div class="score-container">
             <span id="score">Score: 0</span>
             <button id="start-button">Start</button>
             <button id="pause-button" disabled>Pause</button>
             <span id="high-score" class="high-score">High: 0</span>
         </div>
+        
+        <canvas id="tetris" width="240" height="400"></canvas>
+        
         <!-- Removed the .controls div as it's no longer needed -->
         <div id="overlay"></div> <!-- Added overlay for dimming the game on Game Over -->
         <div class="message-container" id="message-container"></div>
+        
         <!-- Mobile Controls -->
         <div class="mobile-controls">
             <button id="up-button"><span class="material-icons">arrow_drop_up</span></button>
