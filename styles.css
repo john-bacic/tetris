@@ -248,15 +248,15 @@ canvas {
     #left-button,
     #right-button {
         /* Remove the previously set height if any */
-        height: 85px; /* Ensure consistent height */
-margin-top: -55px;
+        height: 94px; /* Ensure consistent height */
+margin-top: -60px;
         
     }
 
     /* Ensure up and down buttons have the same height as left and right */
     #up-button,
     #down-button {
-        height: 40px; /* Match the height of left and right buttons */
+        height: 44px; /* Match the height of left and right buttons */
         margin-top: -10px;
     }
 
