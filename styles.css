@@ -223,7 +223,7 @@ canvas {
         flex-direction: column; /* Arrange control rows vertically */
         align-items: center;
         gap: 5px; /* Space between control rows */
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
     
     /* Control Rows */
@@ -233,7 +233,7 @@ canvas {
     }
 
     .mobile-controls button {
-        width: 130px; /* Ensure buttons are uniformly wide */
+        width: 138px; /* Ensure buttons are uniformly wide */
         height: 44px; /* Set all buttons to twice the original height */
         padding: 0px;
         font-size: 20px;
@@ -249,7 +249,7 @@ canvas {
     #right-button {
         /* Remove the previously set height if any */
         height: 94px; /* Ensure consistent height */
-margin-top: -60px;
+        margin-top: -60px;
         
     }
 
