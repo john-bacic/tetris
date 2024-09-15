@@ -233,7 +233,7 @@ canvas {
     }
 
     .mobile-controls button {
-        width: 120px; /* Ensure buttons are uniformly wide */
+        width: 130px; /* Ensure buttons are uniformly wide */
         height: 44px; /* Set all buttons to twice the original height */
         padding: 0px;
         font-size: 20px;
