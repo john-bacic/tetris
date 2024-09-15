@@ -372,19 +372,59 @@ upButton.addEventListener('click', () => {
   playerRotate(1)
 })
 
-// Add these event listeners to handle touch interactions for the down button
+// Enhanced touch handling for the down button to ensure touch states are properly managed
+
+let isDownButtonActive = false
+
+function activateDownButton() {
+  if (!isDownButtonActive) {
+    isDownButtonActive = true
+    dropInterval = 100 // Increase drop speed when pressed
+  }
+}
+
+function deactivateDownButton() {
+  if (isDownButtonActive) {
+    isDownButtonActive = false
+    dropInterval = 1000 // Reset to normal drop speed when released
+  }
+}
+
+// Handle touchstart on the down button
 downButton.addEventListener('touchstart', (event) => {
   event.preventDefault()
-  dropInterval = 100 // Increase drop speed when pressed
+  activateDownButton()
 })
 
+// Handle touchend on the down button
 downButton.addEventListener('touchend', (event) => {
   event.preventDefault()
-  dropInterval = 1000 // Reset to normal drop speed when released
+  deactivateDownButton()
+})
+
+// Handle touchcancel to ensure touch state is cleared if touch is interrupted
+downButton.addEventListener('touchcancel', (event) => {
+  event.preventDefault()
+  deactivateDownButton()
+})
+
+// Optional: Handle mouse events for desktop compatibility
+downButton.addEventListener('mousedown', (event) => {
+  event.preventDefault()
+  activateDownButton()
+})
+
+downButton.addEventListener('mouseup', (event) => {
+  event.preventDefault()
+  deactivateDownButton()
+})
+
+downButton.addEventListener('mouseleave', (event) => {
+  event.preventDefault()
+  deactivateDownButton()
 })
 
 // Prevent double-tap to zoom on mobile devices
-let lastTouchEnd = 0
 document.addEventListener(
   'touchend',
   (event) => {
