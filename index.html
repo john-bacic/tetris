@@ -4,11 +4,23 @@
     <meta charset="UTF-8">
     <title>Tetis</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Prevent zooming on mobile -->
+    
+    <!-- Enable standalone mode on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> <!-- Options: default, black, black-translucent -->
+    
+    <!-- Define Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+    <link rel="apple-touch-startup-image" href="icons/apple-touch-startup-image.png">
+
     <link rel="stylesheet" href="styles.css">
     <!-- Google Fonts: Pixelify Sans for a blocky appearance -->
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
     <!-- Google Material Icons for mobile controls -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Manifest for PWA (optional but recommended) -->
+    <link rel="manifest" href="manifest.json">
 </head>
 <body>
     <div class="game-container">
