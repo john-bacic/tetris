@@ -27,7 +27,7 @@ body {
 @media (max-device-width: 812px) and (orientation: portrait) {
     /* iPhone X, XS, 11 Pro */
     body {
-        padding-top: px;
+        padding-top: 44px;
     }
 }
 
@@ -72,7 +72,7 @@ canvas {
     -webkit-font-smoothing: none;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: crispEdges;
-    margin-top: 0px;
+    margin-top: 10px;
     gap: 2vw; /* Added gap between elements */
 }
 
@@ -83,9 +83,9 @@ canvas {
 
 /* Style for Start and Pause buttons within score-container */
 .score-container button {
-    background-color: #03f613;
+    background-color: #11ff00;
     border: none;
-    color: #000000;
+    color: #000;
     padding: 1vh 2vw;
     font-size: 4vw;
     font-family: 'Pixelify Sans', sans-serif;
@@ -101,10 +101,8 @@ canvas {
 }
 
 .score-container button:hover:not(:disabled) {
-    background-color: #0fdc00;
+    background-color: #0bb300;
 }
-
-/* Removed .controls styles as the .controls div is no longer used */
 
 /* Message Container */
 .message-container {
@@ -129,7 +127,7 @@ canvas {
 /* Overlay */
 #overlay {
     position: absolute;
-    top: 55px;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -141,7 +139,7 @@ canvas {
 /* Mobile Controls */
 .mobile-controls {
     position: fixed;
-    bottom: 5px;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     display: none;
@@ -151,18 +149,16 @@ canvas {
     z-index: 4;
 }
 
-/* Adjust mobile controls layout */
-.mobile-controls {
-    gap: 0px; /* Ensure consistent gap between rows */
-    margin-bottom: 20px;
+/* Control Rows */
+.control-row {
+    display: flex;
+    gap: 10px; /* Space between buttons in a row */
 }
 
-     /* Control Rows */
-     .control-row {
-        display: flex;
-        gap: 10px; /* Space between buttons in a row */
-       
-    }
+/* Adjust mobile controls layout */
+.mobile-controls {
+    gap: 10px; /* Ensure consistent gap between rows */
+}
 
 .mobile-controls button {
     background-color: rgba(25, 25, 25, 0.8);
@@ -223,29 +219,47 @@ canvas {
     /* Show mobile controls on small screens */
     .mobile-controls {
         display: flex;
+        flex-direction: column; /* Arrange control rows vertically */
+        align-items: center;
+        gap: 10px; /* Space between control rows */
     }
     
-    /* Adjust mobile controls layout */
-    .mobile-controls {
-        gap: 10px; /* Ensure consistent gap on small screens */
+    /* Control Rows */
+    .control-row {
+        display: flex;
+        gap: 10px; /* Space between buttons in a row */
     }
 
     .mobile-controls button {
-        width: 120px; /* Ensure buttons are narrower */
-        height: 40px;
-        padding: 10px;
+        width: 120px; /* Ensure buttons are uniformly wide */
+        height: 44px; /* Set all buttons to twice the original height */
+        padding: 0px;
         font-size: 20px;
+        border-radius: 8px; /* Optional: Add some border radius for better aesthetics */
     }
 
     .material-icons {
-        font-size: 20px; /* Adjust icon size accordingly */
+        font-size: 24px; /* Adjust icon size to fit larger buttons */
     }
 
-    /* Make left and right buttons twice as tall */
+    /* Ensure left and right buttons are aligned vertically */
     #left-button,
     #right-button {
-        height: 40px; /* Twice the height of other buttons */
-        margin-top: -30px;
+        /* Remove the previously set height if any */
+        height: 40px; /* Ensure consistent height */
+margin-top: -30px;
+        
+    }
+
+    /* Ensure up and down buttons have the same height as left and right */
+    #up-button,
+    #down-button {
+        height: 40px; /* Match the height of left and right buttons */
+    }
+
+    /* Optional: Adjust margins or positioning if needed */
+    .control-row:first-child {
+        margin-bottom: 10px; /* Space between the up button row and the others */
     }
 }
 
@@ -260,5 +274,20 @@ button {
     /* Ensure buttons are large enough for touch devices */
     min-width: 44px;
     min-height: 44px;
+}
+
+/* Prevent text selection on all buttons and their child elements */
+button,
+button * {
+    user-select: none; /* Disable text selection */
+    -webkit-user-select: none; /* Disable text selection on Safari */
+    -ms-user-select: none; /* Disable text selection on IE/Edge */
+}
+
+/* Optional: Enhance button appearance when pressed */
+.mobile-controls button:active {
+    background-color: #202020; /* Darken background on press */
+    transform: scale(0.95); /* Slightly shrink the button to indicate press */
+    transition: transform 0.1s, background-color 0.1s; /* Smooth transition */
 }
 
