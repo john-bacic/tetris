@@ -27,7 +27,7 @@ body {
 @media (max-device-width: 812px) and (orientation: portrait) {
     /* iPhone X, XS, 11 Pro */
     body {
-        padding-top: 8px;
+        padding-top: 0px;
     }
 }
 
@@ -275,8 +275,8 @@ button {
     user-select: none;           /* Disable text selection */
     
     /* Ensure buttons are large enough for touch devices */
-    min-width: 44px;
-    min-height: 44px;
+    min-width: 40px;
+    min-height: 40px;
 }
 
 /* Prevent text selection on all buttons and their child elements */
