@@ -9,6 +9,14 @@ body {
     overflow: hidden; /* Prevent scrolling on mobile */
 }
 
+
+body, button, canvas {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+
 @media screen and (orientation: portrait) {
     body {
         height: 100vh;
