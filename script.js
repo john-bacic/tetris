@@ -372,6 +372,17 @@ upButton.addEventListener('click', () => {
   playerRotate(1)
 })
 
+// Add these event listeners to handle touch interactions for the down button
+downButton.addEventListener('touchstart', (event) => {
+  event.preventDefault()
+  dropInterval = 100 // Increase drop speed when pressed
+})
+
+downButton.addEventListener('touchend', (event) => {
+  event.preventDefault()
+  dropInterval = 1000 // Reset to normal drop speed when released
+})
+
 // Prevent double-tap to zoom on mobile devices
 let lastTouchEnd = 0
 document.addEventListener(
