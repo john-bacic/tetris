@@ -27,7 +27,7 @@ body {
 @media (max-device-width: 812px) and (orientation: portrait) {
     /* iPhone X, XS, 11 Pro */
     body {
-        padding-top: 44px;
+        padding-top: 8px;
     }
 }
 
