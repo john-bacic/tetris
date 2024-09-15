@@ -27,7 +27,7 @@ body {
 @media (max-device-width: 812px) and (orientation: portrait) {
     /* iPhone X, XS, 11 Pro */
     body {
-        padding-top: 44px;
+        padding-top: 18px;
     }
 }
 
@@ -64,7 +64,7 @@ canvas {
     width: 100%;
     max-width: 100vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Center all items */
     align-items: center;
     color: #11ff00;
     font-family: 'Pixelify Sans', sans-serif;
@@ -72,7 +72,8 @@ canvas {
     -webkit-font-smoothing: none;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: crispEdges;
-    margin-top: 10px;
+    margin-top: 0px;
+    gap: 2vw; /* Added gap between elements */
 }
 
 .high-score {
@@ -80,6 +81,32 @@ canvas {
     color: #ffdd00;
 }
 
+/* Style for Start and Pause buttons within score-container */
+.score-container button {
+    background-color: #11ff00;
+    border: none;
+    color: #000;
+    padding: 1vh 2vw;
+    font-size: 4vw;
+    font-family: 'Pixelify Sans', sans-serif;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+    min-width: 20vw;
+}
+
+.score-container button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+.score-container button:hover:not(:disabled) {
+    background-color: #0bb300;
+}
+
+/* Removed .controls styles as the .controls div is no longer used */
+
+/* Message Container */
 .message-container {
     position: absolute;
     top: 50%;
@@ -102,7 +129,7 @@ canvas {
 /* Overlay */
 #overlay {
     position: absolute;
-    top: 0;
+    top: 55px;
     left: 0;
     width: 100%;
     height: 100%;
@@ -124,16 +151,18 @@ canvas {
     z-index: 4;
 }
 
-/* Control Rows */
-.control-row {
-    display: flex;
-    gap: 10px; /* Space between buttons in a row */
-}
-
 /* Adjust mobile controls layout */
 .mobile-controls {
-    gap: 10px; /* Ensure consistent gap between rows */
+    gap: 0px; /* Ensure consistent gap between rows */
+    margin-bottom: 20px;
 }
+
+     /* Control Rows */
+     .control-row {
+        display: flex;
+        gap: 10px; /* Space between buttons in a row */
+       
+    }
 
 .mobile-controls button {
     background-color: rgba(25, 25, 25, 0.8);
@@ -150,7 +179,7 @@ canvas {
 }
 
 .material-icons {
-    font-size: 24px; /* Adjusted icon size to fit larger buttons */
+    font-size: 20px; /* Adjusted icon size to fit smaller buttons */
 }
 
 .mobile-controls button:active {
@@ -198,23 +227,18 @@ canvas {
     
     /* Adjust mobile controls layout */
     .mobile-controls {
-        gap: 10px; /* Ensure consistent gap between rows */
-    }
-
-    .control-row {
-        display: flex;
-        gap: 10px;
+        gap: 10px; /* Ensure consistent gap on small screens */
     }
 
     .mobile-controls button {
-        width: 120px; /* Adjusted width for better layout */
-        height: 60px; /* Increased height to make buttons taller */
+        width: 120px; /* Ensure buttons are narrower */
+        height: 40px;
         padding: 10px;
         font-size: 20px;
     }
 
     .material-icons {
-        font-size: 24px; /* Adjust icon size accordingly */
+        font-size: 20px; /* Adjust icon size accordingly */
     }
 }
 
