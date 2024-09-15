@@ -222,14 +222,14 @@ canvas {
         display: flex;
         flex-direction: column; /* Arrange control rows vertically */
         align-items: center;
-        gap: 10px; /* Space between control rows */
+        gap: 5px; /* Space between control rows */
         margin-bottom: 15px;
     }
     
     /* Control Rows */
     .control-row {
         display: flex;
-        gap: 10px; /* Space between buttons in a row */
+        gap: 5px; /* Space between buttons in a row */
     }
 
     .mobile-controls button {
@@ -248,8 +248,8 @@ canvas {
     #left-button,
     #right-button {
         /* Remove the previously set height if any */
-        height: 40px; /* Ensure consistent height */
-margin-top: -30px;
+        height: 85px; /* Ensure consistent height */
+margin-top: -55px;
         
     }
 
