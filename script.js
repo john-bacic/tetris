@@ -244,9 +244,6 @@ function playerReset() {
     Math.floor(arena[0].length / 2) - Math.floor(player.matrix[0].length / 2)
 
   if (collide(arena, player)) {
-    arena.forEach((row) => row.fill(0))
-    score = 0
-    scoreElement.innerText = `Score: ${score}`
     showMessage('Game Over')
     startButton.style.display = 'block' // Show Start button
     pauseButton.style.display = 'none' // Hide Pause button
@@ -301,43 +298,44 @@ function startGame() {
   isPaused = false
   score = 0
   scoreElement.innerText = `Score: ${score}`
+  highScoreElement.innerText = `High: ${highScore}`
   arena.forEach((row) => row.fill(0))
   playerReset()
   startButton.style.display = 'none' // Hide Start button
   pauseButton.style.display = 'block' // Show Pause button
-  pauseButton.disabled = false // Enable Pause button
+  pauseButton.disabled = false // Enable Pause button for future use
   lastTime = performance.now()
   animationId = requestAnimationFrame(update)
   hideMessage()
+
+  // Hide the overlay when the game starts
+  overlay.style.display = 'none'
 }
-
-// Hide the overlay when the game starts
-overlay.style.display = 'none'
 pauseButton.style.display = 'none'
-// }
 
-function pauseGame() {
+// Ensure pause button is shown only when needed
+function togglePause() {
   if (!isStarted) return
   if (isPaused) {
     // Resume the game
     isPaused = false
     pauseButton.innerText = 'Pause'
-    pauseButton.classList.remove('resume') // Remove Resume styling
+    pauseButton.classList.remove('resume')
     lastTime = performance.now()
     animationId = requestAnimationFrame(update)
     hideMessage()
   } else {
     // Pause the game
     isPaused = true
-    pauseButton.innerHTML = '<span style="color: #11ff00;">Resume</span>'
-    pauseButton.classList.add('resume') // Add Resume styling
+    pauseButton.innerText = 'Resume'
+    pauseButton.classList.add('resume')
     cancelAnimationFrame(animationId)
     showMessage('Paused')
   }
 }
 
 startButton.addEventListener('click', startGame)
-pauseButton.addEventListener('click', pauseGame)
+pauseButton.addEventListener('click', togglePause)
 
 // Handle keyboard controls
 document.addEventListener('keydown', (event) => {
