@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Tetis</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Added for mobile responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Prevent zooming on mobile -->
     <link rel="stylesheet" href="styles.css">
     <!-- Google Fonts: Pixelify Sans for a blocky appearance -->
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
@@ -24,10 +24,12 @@
         <div class="message-container" id="message-container"></div>
         <!-- Mobile Controls -->
         <div class="mobile-controls">
-            <button id="left-button"><span class="material-icons">arrow_left</span></button>
-            <button id="up-button"><span class="material-icons">arrow_upward</span></button>
-            <button id="down-button"><span class="material-icons">arrow_downward</span></button>
-            <button id="right-button"><span class="material-icons">arrow_right</span></button>
+            <button id="up-button"><span class="material-icons">arrow_drop_up</span></button>
+            <div class="middle-controls">
+                <button id="left-button"><span class="material-icons">arrow_left</span></button>
+                <button id="right-button"><span class="material-icons">arrow_right</span></button>
+            </div>
+            <button id="down-button"><span class="material-icons">arrow_drop_down</span></button>
         </div>
     </div>
     <script src="script.js"></script>

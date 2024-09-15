@@ -81,7 +81,7 @@ button:disabled {
 }
 
 button:hover:not(:disabled) {
-    background-color: #0bb300;
+    background-color: #101010;
 }
 
 .message-container {
@@ -122,35 +122,41 @@ button:hover:not(:disabled) {
 /* Mobile Controls */
 .mobile-controls {
     position: fixed;
-    bottom: 80px;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     display: none;
-    gap: 5px;
+    flex-direction: column; /* Arrange buttons vertically */
+    align-items: center;
+    gap: 10px; /* Reduced gap for tighter layout */
     z-index: 4;
 }
 
+.middle-controls {
+    display: flex;
+    gap: 10px; /* Space between left and right buttons */
+}
+
 .mobile-controls button {
-    background-color: rgba(20, 20, 20, 0.8);
+    background-color: rgba(25, 25, 25, 0.8);
     border: none;
-    color: #c1c1c1;
-    padding: 5px;
-    /* font-size: 24px; */
-    /* border-radius: 10%; */
-    width: 10px;
-    /* max-width: 20px; */
-    height: 60px;
+    color: #00ff1a;
+    padding: 10px; /* Reduced padding for narrower buttons */
+    font-size: 20px; /* Adjusted font size */
+    /* border-radius: 50%; */
+    width: 40px; /* Reduced width */
+    height: 40px; /* Reduced height */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .material-icons {
-    font-size: 36px; /* Adjust icon size as needed */
+    font-size: 20px; /* Adjusted icon size to fit smaller buttons */
 }
 
 .mobile-controls button:active {
-    background-color: #1c1c1c;
+    background-color: #202020;
 }
 
 @media (orientation: landscape) {
@@ -195,6 +201,22 @@ button:hover:not(:disabled) {
     /* Show mobile controls on small screens */
     .mobile-controls {
         display: flex;
+    }
+    
+    /* Adjust mobile controls layout */
+    .mobile-controls {
+        gap: 10px; /* Ensure consistent gap on small screens */
+    }
+
+    .mobile-controls button {
+        width: 40px; /* Ensure buttons are narrower */
+        height: 40px;
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    .material-icons {
+        font-size: 20px; /* Adjust icon size accordingly */
     }
 }
 
