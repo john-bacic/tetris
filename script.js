@@ -309,10 +309,12 @@ function startGame() {
   lastTime = performance.now()
   animationId = requestAnimationFrame(update)
   hideMessage()
-
-  // Hide the overlay when the game starts
-  overlay.style.display = 'none'
 }
+
+// Hide the overlay when the game starts
+overlay.style.display = 'none'
+pauseButton.style.display = 'none'
+// }
 
 function pauseGame() {
   if (!isStarted) return
