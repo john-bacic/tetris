@@ -240,6 +240,13 @@ canvas {
     .material-icons {
         font-size: 20px; /* Adjust icon size accordingly */
     }
+
+    /* Make left and right buttons twice as tall */
+    #left-button,
+    #right-button {
+        height: 40px; /* Twice the height of other buttons */
+        margin-top: -30px;
+    }
 }
 
 /* Prevent double-tap zoom on buttons by disabling touch-callout and setting touch-action */
