@@ -324,6 +324,7 @@ function togglePause() {
     lastTime = performance.now()
     animationId = requestAnimationFrame(update)
     hideMessage()
+    overlay.style.display = 'none'
   } else {
     // Pause the game
     isPaused = true
@@ -331,6 +332,7 @@ function togglePause() {
     pauseButton.classList.add('resume')
     cancelAnimationFrame(animationId)
     showMessage('Paused')
+    overlay.style.display = 'block'
   }
 }
 
