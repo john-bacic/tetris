@@ -72,8 +72,7 @@ canvas {
 }
 
 .score-container button:hover:not(:disabled) {
-    background-color: #343434;
-    color:#00ff1a;
+    background-color: #0bb300;
 }
 
 /* Removed .controls styles as the .controls div is no longer used */
@@ -135,7 +134,7 @@ canvas {
     padding: 10px; /* Reduced padding for narrower buttons */
     font-size: 20px; /* Adjusted font size */
     /* border-radius: 50%; */
-    width: 100px; /* Reduced width */
+    width: 40px; /* Reduced width */
     height: 40px; /* Reduced height */
     display: flex;
     justify-content: center;
@@ -204,5 +203,18 @@ canvas {
     .material-icons {
         font-size: 20px; /* Adjust icon size accordingly */
     }
+}
+
+/* Prevent double-tap zoom on buttons by disabling touch-callout and setting touch-action */
+button {
+    touch-action: manipulation;
+    -webkit-touch-callout: none; /* Disable callout on iOS */
+    -webkit-user-select: none;   /* Disable text selection on iOS */
+    -ms-touch-action: manipulation;
+    user-select: none;           /* Disable text selection */
+    
+    /* Ensure buttons are large enough for touch devices */
+    min-width: 44px;
+    min-height: 44px;
 }
 
