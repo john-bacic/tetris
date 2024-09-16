@@ -42,7 +42,7 @@ let isStarted = false
 
 // Draw grid
 function drawGrid() {
-  context.strokeStyle = 'rgba(255, 255, 255, 0.1)'
+  context.strokeStyle = 'rgba(255, 255, 255, 0.13)'
   context.lineWidth = 0.05
   for (let x = 0; x < canvas.width / 20; x++) {
     context.beginPath()
