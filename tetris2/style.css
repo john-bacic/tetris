@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    --color-background: #1a1a1a;
+    --color-surface: #000;
+    --color-button: #333;
+    --color-accent: #00ff00;
+    --color-text: #fff;
+    --color-grid: rgba(255, 255, 255, 0.1);
+    --color-shadow: rgba(0, 0, 0, 0.2);
+    --color-button-hover: #444;
+    --color-button-active: #535353;
+    --color-score: #00ff00;
+    --border-radius: 2px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    padding: 10px;
+    touch-action: none;
+}
+
+.container {
+    display: flex;
+    gap: 2px;
+    width: 100%;
+    max-width: 1200px;
+    height: calc(100vh - 140px);
+    padding-bottom: 120px;
+    position: relative;
+}
+
+.game-board-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 800px;
+    flex: 1;
+    position: relative;
+}
+
+.game-board-container canvas {
+    image-rendering: pixelated;
+    max-height: 100%;
+    width: auto;
+}
+
+.game-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.score-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-width: 80px;
+}
+
+.score-container h2 {
+    font-family: 'Press Start 2P', cursive;
+    color: var(--color-score);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px var(--color-score);
+    font-size: 1rem;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.score-container span {
+    font-family: 'Press Start 2P', cursive;
+    color: var(--color-score);
+    text-shadow: 0 0 5px var(--color-score);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.next-piece {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.next-piece h2 {
+    font-family: 'Press Start 2P', cursive;
+    color: var(--color-score);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px var(--color-score);
+    font-size: 1rem;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.next-piece canvas {
+    background-color: #000;
+    border-radius: var(--border-radius);
+    width: 80px;
+    height: 80px;
+}
+
+#board {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-grid);
+}
+
+#nextPiece {
+    background-color: transparent;  
+    border-radius: var(--border-radius);
+    aspect-ratio: 1/1;
+}
+
+button {
+    /* background-color: var(--color-accent); */
+    background-color: transparent;
+    color: var(--color-text);
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 12px;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.mobile-controls {
+    position: fixed;
+    width: 90%;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 0px;
+    padding: 0px;
+    z-index: 100;
+}
+
+.mobile-controls button svg {
+    width: 32px;
+    height: 32px;
+}
+
+.mobile-controls button {
+    /* background-color: var(--color-button); */
+background-color: transparent;
+    color: var(--color-accent);
+    border-radius: var(--border-radius);
+    font-size: 12px;
+    padding: 0px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    touch-action: manipulation;
+}
+
+.mobile-controls > button {
+    flex: 2;
+    font-size: 12px;
+    margin-top: 0px;
+}
+
+.mobile-controls-middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    width: 180px;
+    margin-top: 0px;
+    flex: 0 0 auto;
+}
+
+.mobile-controls-middle button {
+    width: 100%;
+    font-size: 12px;
+}
+
+#leftBtn, #rightBtn {
+    height: 96px;
+}
+
+#dropBtn {
+    margin-top: -2px;
+    height: 48px;
+    font-size: 12px;
+}
+
+#rotateBtn {
+    margin-top: 0px;
+    height: 48px;
+    font-size: 12px;
+}
+
+.mobile-controls button:active {
+    background-color: var(--color-accent);
+    color: var(--color-text);
+}
+
+#pauseBtn {
+    background-color: var(--color-button);
+    font-size: 18px;
+}
+
+#pauseBtn:hover {
+    background-color: var(--color-button-hover);
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.control-button {
+    min-width: 100px;
+    height: 48px;
+    border-radius: var(--border-radius);
+    border: none;
+    background-color: transparent;
+    color: var(--color-accent);
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.control-button:not(.playing) {
+    background-color: var(--color-accent);
+    color: #000000;
+}
+
+.control-button.playing {
+    /* background-color: var(--color-accent); */
+    color: var(--color-accent);
+}
+
+.control-button:hover:not(.playing) {
+    background-color: var(--color-accent);
+    color: #000000;
+}
+
+.control-button.playing:hover {
+    background-color: var(--color-button-hover);
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 5px;
+    }
+    
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 100px;
+        height: calc(100vh - 120px);
+    }
+    
+    .game-info {
+        padding: 8px;
+        gap: 8px;
+        margin: 2px auto 8px;
+    }
+    
+        .score-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 5px;
+        }
+        
+    .score-container h2,
+    .next-piece h2 {
+        font-size: 0.7rem;
+    }
+    
+    .score-container span {
+        font-size: 0.8rem;
+    }
+    
+    .control-button {
+        min-width: 80px;
+        height: 40px;
+        font-size: 12px;
+    }
+    
+    .game-board-container {
+        margin: 2px auto;
+    }
+    
+    #board {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .next-piece {
+        margin: 0;
+    }
+    
+    .next-piece canvas {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .controls {
+        flex-direction: row;
+        gap: 5px;
+    }
+    
+    .mobile-controls {
+        bottom: 15px;
+        padding: 0px;
+        gap: 0px;
+       
+    }
+    
+    .game-info {
+        padding: 0px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+        margin-bottom: 0px;
+    }
+    
+    .mobile-controls button svg {
+        width: 24px;
+        height: 24px;
+    }
+}
